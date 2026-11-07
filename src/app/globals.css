@@ -1,0 +1,19 @@
+@import "tailwindcss";
+:root{--bg:#F8FCFF;--cyan:#06B6D4;--cyan-d:#0891B2;--cyan-l:#CFFAFE;--ink:#0F172A;--mute:#64748B}
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-inter),system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.font-head{font-family:var(--font-sora),var(--font-inter),sans-serif;letter-spacing:-.02em}
+.glass{background:rgba(255,255,255,.55);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.75);box-shadow:0 8px 32px rgba(8,145,178,.08),inset 0 1px 0 rgba(255,255,255,.9);border-radius:1.5rem}
+.glow{transition:box-shadow .3s,border-color .3s,transform .3s}
+.glow:hover{box-shadow:0 12px 40px rgba(6,182,212,.28),inset 0 1px 0 #fff;border-color:rgba(6,182,212,.45)}
+.label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--cyan-d)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.5rem;border-radius:999px;font-weight:600;font-size:.95rem;transition:box-shadow .3s,background .3s}
+.btn-p{background:linear-gradient(135deg,var(--cyan),var(--cyan-d));color:#fff;box-shadow:0 8px 24px rgba(6,182,212,.35)}
+.btn-g{background:rgba(255,255,255,.6);border:1px solid rgba(6,182,212,.35);color:var(--cyan-d);backdrop-filter:blur(10px)}
+.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed;box-shadow:none}
+.cloud{position:absolute;border-radius:50%;background:radial-gradient(closest-side,#fff 0,rgba(255,255,255,0) 100%);animation:drift linear infinite;will-change:transform}
+.dot{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:floaty ease-in-out infinite}
+@keyframes drift{from{transform:translateX(-45vw)}to{transform:translateX(130vw)}}
+@keyframes floaty{0%,100%{transform:translateY(0);opacity:.15}50%{transform:translateY(-28px);opacity:.55}}
+@keyframes bar{0%,100%{transform:scaleX(.3)}50%{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.cloud,.dot{animation:none!important}html{scroll-behavior:auto}}
